@@ -1,0 +1,12 @@
+.env
+*.bak*
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+logs/
+data/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+allowed_services.json

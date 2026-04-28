@@ -1,0 +1,1 @@
+# Gate.io exchange adapter

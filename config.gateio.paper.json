@@ -1,0 +1,80 @@
+{
+    "strategy": {
+        "fair_rise_threshold": 0.035,
+        "fair_move_window_seconds": 3.0,
+        "hold_seconds": 45.0,
+        "cooldown_seconds": 45.0,
+        "tick_offset_entry": 3,
+        "tick_offset_close": 6,
+        "fill_timeout_ms": 2500,
+        "close_with_market_fallback": true,
+        "signal_confirm_seconds": 1.5,
+        "signal_max_pullback": 0.012,
+        "last_max_move_pct": 0.01,
+        "max_open_positions": 3,
+        "max_spread_pct": 0.8,
+        "spread_to_signal_ratio": 0.2,
+        "min_depth_quote_usdt": 10.0,
+        "depth_to_notional_ratio": 1.5,
+        "entry_follow_timeout_seconds": 20.0,
+        "entry_follow_min_pct": 0.006,
+        "reverse_signal": false,
+        "require_last_chg_aligned": true,
+        "adverse_last_chg_min_pct": 0.004,
+        "max_fair_rise_pct": 0.05,
+        "quote_size_usdt": 10.0
+    },
+    "data": {
+        "ws_url": "wss://fx-ws.gateio.ws/v4/ws/usdt",
+        "orderbook_depth": 20,
+        "reconnect_backoff_ms_min": 300,
+        "reconnect_backoff_ms_max": 5000,
+        "processing_latency_warn_ms": 50.0
+    },
+    "exchange": {
+        "exchange_id": "gateio",
+        "market_type": "swap",
+        "min_max_leverage": 20.0,
+        "max_maintenance_rate": 0.03,
+        "symbols_allowlist": [],
+        "symbols_denylist": [
+            "BTC/USDT:USDT",
+            "ETH/USDT:USDT",
+            "SOL/USDT:USDT",
+            "XRP/USDT:USDT",
+            "DOGE/USDT:USDT"
+        ]
+    },
+    "runtime": {
+        "paper_mode": true,
+        "paper_balance_usdt": 1000.0,
+        "max_run_seconds": 0,
+        "monitor_interval_seconds": 5.0,
+        "minute_snapshot_interval_seconds": 60.0,
+        "minute_log_file": "logs/gateio/paper/minute.log",
+        "trades_log_file": "logs/gateio/paper/trades.jsonl",
+        "ws_debug_messages": 0,
+        "log_level": "INFO",
+        "config_name": "gateio-paper",
+        "position_state_file": "data/positions-gateio-paper.json"
+    },
+    "risk": {
+        "position_size_pct": 0.1,
+        "symbol_max_consecutive_losses": 2,
+        "symbol_ban_duration_seconds": 86400.0,
+        "trailing_enabled": true,
+        "trailing_activation_pct_tier1": 0.015,
+        "trailing_activation_pct_tier2": 0.015,
+        "trailing_lock_pct": 0.3,
+        "tp1_margin_multiplier_tier1": 4.0,
+        "tp1_margin_multiplier_tier2": 4.0,
+        "lev_tier1_max": 30.0,
+        "lev_tier2_max": 50.0,
+        "stop_loss_margin_fraction_tier1": 0.65,
+        "stop_loss_margin_fraction_tier2": 0.65,
+        "stop_loss_high_lev_margin_fraction": 0.9,
+        "stop_loss_high_lev_threshold": 100.0,
+        "trailing_min_buffer_pct": 0.005,
+        "tp_cooldown_seconds": 10800.0
+    }
+}
